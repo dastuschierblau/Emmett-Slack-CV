@@ -1,0 +1,213 @@
+/* Resume css file */
+
+body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,
+      Ubuntu,Cantarell,Helvetica,Neue,sans-serif;
+	box-sizing: border-box;
+}
+
+.container {
+	min-height: 100vh;
+}
+/*---------------------SIDEBAR STYLES------------------*/
+
+.sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 30vw;
+	height: 100vh;
+	background-color: #222222;
+	color: #cccccc;
+}
+
+.header-logo {
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.header-logo > .top {
+	background-color: #fafafa;
+	color: blue;
+	padding-top: 40px;
+}
+
+.header-logo > .bottom {
+	background-color: blue;
+	color: #fafafa;
+	padding-bottom: 40px;
+}
+
+.sidebar h3 { 
+	padding: 10px 10px 20px 10px;
+}
+
+.projects li {
+	padding: 10px 10px 10px 20px;
+}
+
+.projects li:hover {
+	color: #fafafa;
+	cursor: pointer;
+	border-left: 3px solid #fafafa;
+}
+
+.collapsed-list, .collapsed-list-btn {
+	display: none;
+}
+
+
+/*---------------------RESUME SECTION STYLES--------------*/
+
+.mainContent {
+	width: 70vw;
+	height: 100vh;
+	overflow: scroll;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #e0edff;
+}
+
+.mainContent > * {
+	padding: 25px;
+}
+
+.mainContent > header {
+	text-align: center;
+}
+
+.resume-section {
+	text-align: left;
+}
+
+.resume-section > h2 {
+	background-color: blue;
+	color: #fafafa;
+}
+
+.resume-section > h2, h3, ul {
+	padding: 25px;
+}
+
+.resume-section > p {
+	padding-left: 25px;
+}
+
+.resume-section > h3 {
+	color: blue;
+}
+
+.ul-square {
+	background-color: #fafafa;
+}
+
+.ul-square > li {
+  padding-left: 1em; 
+  text-indent: -1.1em;
+}
+
+.ul-square > li::before {
+	content: "■"; 
+	font-family:"Arial Black";
+	color: blue;
+	padding-right: 0.5em;
+}
+
+@media (max-width:600px) {
+	.header-logo {
+		display: none;
+	}
+	
+	.project-list {
+		display: none;
+	}
+	
+	.sidebar {
+		width: 100vw;
+		height: 20vh;
+	}
+	
+	.mainContent {
+		width: 100vw;
+		height: 80vh;
+		overflow: auto;
+		position: relative;
+		top: 20vh;
+	}
+	
+	.collapsed-list {
+		display: none;
+        width: 0;
+		height: 0;
+		transition: all 0.5s;
+		color: #fafafa;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	
+	.collapsed-list.active {
+		display: block;
+		min-width: 100vw;
+		z-index: 9;
+	}
+
+	
+	.collapsed-list-btn {
+		width: 100px;
+		height: 100px;
+		background-color: #222222;
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 3em;
+		z-index: 10;
+	}
+	
+	.collapsed-list-btn:hover {
+		cursor: pointer;
+	}
+	
+	.collapsed-list > h2 {
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.collapsed-list-ul {
+		background-color: #222222;
+		min-height: 100vh;
+		display: flex; 
+		flex-direction: column;
+		z-index: 20;
+	}
+	
+	.collapsed-list-ul > li {
+		transition: 0.2s;
+		height: 80px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-left: 20px;
+	}
+	
+	.collapsed-list-ul > li:hover {
+		cursor: pointer;
+		background-color: #dddddd;
+	    color: #222222;
+	}
+
+}
