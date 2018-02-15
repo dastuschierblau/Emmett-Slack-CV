@@ -3,8 +3,11 @@ let React = require( 'react' ),
 	ReactRouter = require( 'react-router-dom' ),
 	Router = ReactRouter.BrowserRouter,
 	Route = ReactRouter.Route,
+	Switch = ReactRouter.Switch,
 	Sidebar = require( './Components/Sidebar.js' ),
 	Resume = require( './Components/Resume.js' ),
+	Bloodborne = require( './Components/Bloodborne.js' ),
+	ChineseOdyssey = require( './Components/ChineseOdyssey.js' ),
 	MainContent = require( './Components/MainContent.js' );
 	
 require( './index.css' );
@@ -36,7 +39,14 @@ class App extends React.Component {
 		  <Router>
 		  <div className='container'>
 			<Sidebar toggle={ this.toggleCollapsed } btnLabel={ this.state.label }/>
-			<Resume />
+			
+			<Switch>
+			<Route exact path='/' component={ Resume } />
+			<Route path='/bloodborne' component={ Bloodborne } />
+			<Route path='/chineseOdyssey' component={ ChineseOdyssey } />
+			<Route render={() => <div>404 Not Found</div> } />
+			</Switch>
+			
 		  </div>
 		  </Router>
 		);

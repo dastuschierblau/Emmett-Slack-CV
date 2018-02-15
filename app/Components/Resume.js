@@ -22,6 +22,7 @@ class Resume extends React.Component {
 			    with Bootstrap, media queries, and CSS grid to achieve this end</li>
 			  <li>HTML5 and CSS3</li>
 			  <li>Use of node.js npm, particularly for React projects</li>
+			  <li>Webpack to bundle everything together</li>
 			  <li>Version control using Git</li>
 			</ul>
 			

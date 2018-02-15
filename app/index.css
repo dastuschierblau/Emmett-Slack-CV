@@ -10,6 +10,14 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 	box-sizing: border-box;
 }
 
+a, a:visited {
+	color: #cccccc;
+}
+
+a:active {
+	color: #fafafa;
+}
+
 .container {
 	min-height: 100vh;
 }
@@ -34,18 +42,21 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 
 .header-logo > .top {
 	background-color: #fafafa;
-	color: blue;
+	color: #543de5;
 	padding-top: 40px;
 }
 
 .header-logo > .bottom {
-	background-color: blue;
+	background: linear-gradient( to right, #6e42f4, #267ef2 );
 	color: #fafafa;
 	padding-bottom: 40px;
 }
 
 .sidebar h3 { 
-	padding: 10px 10px 20px 10px;
+	padding: 30px 10px 5px 0;
+	border-bottom: 1px solid #fafafa;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .projects li {
@@ -88,8 +99,9 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 }
 
 .resume-section > h2 {
-	background-color: blue;
+	background: #6e42f4;
 	color: #fafafa;
+	border-radius: 8px;
 }
 
 .resume-section > h2, h3, ul {
@@ -101,11 +113,12 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 }
 
 .resume-section > h3 {
-	color: blue;
+	color: #6e42f4;
 }
 
 .ul-square {
 	background-color: #fafafa;
+	border-radius: 8px;
 }
 
 .ul-square > li {
@@ -116,8 +129,14 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 .ul-square > li::before {
 	content: "■"; 
 	font-family:"Arial Black";
-	color: blue;
+	color: #6e42f4;
 	padding-right: 0.5em;
+}
+
+.screenshot {
+	width: 60vw;
+	display: block;
+	margin: 0 auto;
 }
 
 @media (max-width:600px) {
@@ -131,15 +150,15 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 	
 	.sidebar {
 		width: 100vw;
-		height: 20vh;
+		height: 15vh;
 	}
 	
 	.mainContent {
 		width: 100vw;
-		height: 80vh;
+		height: 85vh;
 		overflow: auto;
 		position: relative;
-		top: 20vh;
+		top: 15vh;
 	}
 	
 	.collapsed-list {
@@ -158,13 +177,15 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 	.collapsed-list.active {
 		display: block;
 		min-width: 100vw;
+		height: 100vh;
 		z-index: 9;
+		background-color: #222222;
 	}
 
 	
 	.collapsed-list-btn {
 		width: 100px;
-		height: 100px;
+		height: 15vh;
 		background-color: #222222;
 		position: absolute;
 		top: 0;
@@ -189,7 +210,6 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 	
 	.collapsed-list-ul {
 		background-color: #222222;
-		min-height: 100vh;
 		display: flex; 
 		flex-direction: column;
 		z-index: 20;
@@ -197,7 +217,7 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 	
 	.collapsed-list-ul > li {
 		transition: 0.2s;
-		height: 80px;
+		height: 15vh;
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
@@ -208,6 +228,10 @@ body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 		cursor: pointer;
 		background-color: #dddddd;
 	    color: #222222;
+	}
+	
+	.screenshot {
+		width: 90vw;
 	}
 
 }
