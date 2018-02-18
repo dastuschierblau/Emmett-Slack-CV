@@ -22,19 +22,30 @@ class Sidebar extends React.Component {
 		<div className='collapsed-list'>
 		  <h2>Projects</h2>
 		  <ul className='collapsed-list-ul'>
-		    <li>Weather App</li>
-		    <li>
-			  <Link to='/chineseOdyssey'>
-			    Cheng and Tsui Chinese Odyssey
-			  </Link>
-			</li>
-		    <li>Corvid App Landing Page</li>
-		    <li>Netflix clone</li>
-			<li>
-			  <Link to='/bloodborne'>
-			    Bloodborne Weapon Guide
-		      </Link>
-			</li>
+		    <Link to='/'
+			  onClick={ this.props.toggle }>
+		      <li>Weather App</li>
+			</Link>
+			<Link to='/chineseOdyssey'
+			  onClick={ this.props.toggle }>
+				<li>
+					Cheng and Tsui Chinese Odyssey
+				</li>
+			</Link>
+			<Link to='/'
+			  onClick={ this.props.toggle }>
+		      <li>Corvid App Landing Page</li>
+			</Link>
+			<Link to='/'
+			  onClick={ this.props.toggle }>
+		      <li>Netflix clone</li>
+			</Link>
+			 <Link to='/bloodborne'
+			   onClick={ this.props.toggle }>
+				<li>
+					Bloodborne Weapon Guide
+				</li>
+			</Link>
 		  </ul>
 		</div>
 		

@@ -26,12 +26,15 @@ class App extends React.Component {
 	toggleCollapsed( e ) {
 		let el = e.target,
 		    sibling = el.nextElementSibling;
-		sibling.classList.contains( 'active' ) 
-		? sibling.classList.remove( 'active' ) : sibling.classList.add( 'active' );
+			
+		if( sibling.classList.contains( 'active' ) ) {
+			sibling.classList.remove( 'active' );
+			this.setState(() => ({ label: '+' }));
+		} else {
+			sibling.classList.add( 'active' );
+			this.setState(() => ({ label: 'x' }));
+		}
 		
-		sibling.classList.contains( 'active' )
-		? this.setState(() => ({ label: 'x' }))
-		: this.setState(() => ({ label: '+' }));
 	}
 	
 	render() {

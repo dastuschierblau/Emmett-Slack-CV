@@ -63,6 +63,10 @@ a:active {
 	padding: 10px 10px 10px 20px;
 }
 
+.projects li > a {
+	color: inherit;
+}
+
 .projects li:hover {
 	color: #fafafa;
 	cursor: pointer;
@@ -87,21 +91,38 @@ a:active {
 }
 
 .mainContent > * {
-	padding: 25px;
+	padding: 10px 25px;
 }
 
-.mainContent > header {
+.resume-header {
 	text-align: center;
+	color: #fafafa;
+	background: linear-gradient(to right, #6e42f4, purple);
+	letter-spacing: 3px;
+}
+
+.resume-header-item {
+	padding: 10px;
+	color: #fafafa;
+}
+
+.resume-header-item > a {
+	color: inherit;
 }
 
 .resume-section {
 	text-align: left;
+	margin: 30px 0;
+}
+
+.resume-section > * {
+	background-color: #fafafa;
 }
 
 .resume-section > h2 {
 	background: #6e42f4;
 	color: #fafafa;
-	border-radius: 8px;
+	border-radius: 8px 8px 0 0;
 }
 
 .resume-section > h2, h3, ul {
@@ -109,20 +130,28 @@ a:active {
 }
 
 .resume-section > p {
-	padding-left: 25px;
+	padding: 25px;
 }
 
 .resume-section > h3 {
 	color: #6e42f4;
 }
 
+.underline {
+	height: 1px;
+	width: 40vw;
+	background: linear-gradient(to right, #6e42f4, #dddddd);
+}
+
 .ul-square {
 	background-color: #fafafa;
-	border-radius: 8px;
+	border-radius: 0 0 8px 8px;
 }
 
 .ul-square > li {
   padding-left: 1em; 
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-indent: -1.1em;
 }
 
@@ -138,6 +167,9 @@ a:active {
 	display: block;
 	margin: 0 auto;
 }
+
+
+/* ---------------- Media queries for 600px breakpoint -----------------*/
 
 @media (max-width:600px) {
 	.header-logo {
@@ -215,7 +247,7 @@ a:active {
 		z-index: 20;
 	}
 	
-	.collapsed-list-ul > li {
+	.collapsed-list-ul > a {
 		transition: 0.2s;
 		height: 15vh;
 		display: flex;
@@ -224,14 +256,16 @@ a:active {
 		padding-left: 20px;
 	}
 	
-	.collapsed-list-ul > li:hover {
+	.collapsed-list-ul > a:hover {
 		cursor: pointer;
 		background-color: #dddddd;
-	    color: #222222;
+		color: #222222;
 	}
+
 	
 	.screenshot {
 		width: 90vw;
 	}
+
 
 }
