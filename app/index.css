@@ -168,6 +168,38 @@ a:active {
 	margin: 0 auto;
 }
 
+/* ---------------- CAROUSEL STYLES --------------------------------*/
+
+#carousel {
+	width: 60vw;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+.carousel-ul {
+	width: 5000px;
+	padding: 0;
+}
+
+.carousel-li {
+	float: left;
+}
+
+.caption {
+	background-color: #fafafa;
+	border: 1px solid #222222;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 0.8em;
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	position: relative;
+	top: -30px;
+	 box-shadow: 5px 5px 8px #666666;
+}
+
 
 /* ---------------- Media queries for 600px breakpoint -----------------*/
 

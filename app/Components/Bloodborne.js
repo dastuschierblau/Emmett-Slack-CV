@@ -1,4 +1,5 @@
-const React = require( 'react' );
+const React = require( 'react' ),
+      Carousel = require( './carousel.js' );
 
 class Bloodborne extends React.Component {
   render() {
@@ -17,6 +18,12 @@ class Bloodborne extends React.Component {
            I made this applet in large part because I found the game's wiki
            page for weapon stats to be difficult to read. 		
 		</p>
+		
+		<Carousel />
+		<span className='caption'>
+		  Mouse over the image to pause scrolling.
+		</span>
+		
 		<p>Item descriptions and stats 
 		   are rendered when a weapon is selected from the sidebar.
 		   The weapon list can be filtered by categories, which are 
