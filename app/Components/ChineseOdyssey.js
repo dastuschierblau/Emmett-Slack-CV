@@ -4,16 +4,17 @@ class ChineseOdyssey extends React.Component {
   render() {
     return (
 	  <div className='mainContent'>
+	    <h1>Cheng and Tsui Chinese Odyssey</h1>
 	   
 	    <p>This site is a custom digitization of the Cheng and Tsui Chinese
 		   Odyssey volume 5 textbook. The site itself deals with the first 
 		   two lessons in the textbook, presenting a main lesson text 
 		   followed by a breakdown of its vocabulary and grammar.
 		</p>
-		<p>For this project, I sought to use purely vanilla JavaScript, using
-		   Jquery only for the lesson text hover feature. I also chose to 
+		<p>For this project, I sought to use purely vanilla JavaScript. I also chose to 
 		   use CSS3 media queries to achieve a responsive layout, and modules were
-		   made using IIFE's rather than CommonJS. 
+		   made using IIFE's rather than CommonJS. As a result of these practices,
+		   this project did not require any bundling or transpiling.		   
 		</p>
 		<p>Each lesson text page features a hover feature on desktop screen
 		   sizes. Hovering over a highlighted vocabulary word reveals a tooltip

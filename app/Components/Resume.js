@@ -6,7 +6,7 @@ class Resume extends React.Component {
 	  <div className='mainContent'>
 	    <header className='resume-header'>
 		  <h2 className='resume-header-item'>EMMETT FRANK SLACK</h2>
-		  <h3 className='resume-header-item'><a target='blank' href='https://github.com/dastuschierblau'>Github account: dastuschierblau</a></h3>
+		  <h3 className='resume-header-item'><a target='blank' href='https://github.com/dastuschierblau'>Github: dastuschierblau</a></h3>
 		  <h3 className='resume-header-item'>emmett.slack@yahoo.com</h3>
 		</header>
 		  

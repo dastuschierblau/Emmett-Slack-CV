@@ -5,6 +5,10 @@ class Bloodborne extends React.Component {
   render() {
     return (
 	  <div className='mainContent'>
+	    <h1>Bloodborne Weapon Guide</h1>
+		<a target='blank' href='https://arcane-cauliflower.firebaseapp.com'>
+		  See it here</a>
+	  
 	    <p>I made this project using React.js and React Router v4. I used
 		  CommonJS to achieve modularity, and npm with Webpack to manage
 		  all of my dependencies.
@@ -31,14 +35,25 @@ class Bloodborne extends React.Component {
 		   is chosen, the corresponding route is rendered by React 
 		   Router. A category route is also indicated by a corresponding
 		   svg image on the bottom left of the screen.
-		   I relied upon the match property supplied by React Router to 
+		   I relied upon the match property supplied by React Router (along with
+           URL parameters) to 
 		   allow for nested routes, i.e. a specialization route followed
 		   by an individual weapon route. 
+		</p>
+		<p>The entire UI is itself wrapped in a Route component- with no specified path,
+           just a render property- to allow for
+		   usage of the location prop supplied by React Router. This prop was
+		   essential for adding CSS animations for route transitions (via the
+		   TransitionGroup and CSSTransition components supplied by the react-
+		   transition-group npm module).
 		</p>
 		<p>The applet utilizes a single stateful component along with several
 		   stateless functional components. This made development much simpler
 		   overall because the logic was relatively straightforward and easy
 		   to reason about. Nesting of components was likewise very shallow.
+		</p>
+		<p>This project helped me gain a deeper understanding (and appreciation)
+		   of the React Router library. 
 		</p>
 	 </div>
 	);

@@ -3,6 +3,12 @@ let React = require( 'react' ),
 	NavLink = ReactRouter.NavLink,
 	Link = ReactRouter.Link;
 
+function createMarkup( sym ) {
+  return sym === 'open' 
+  ? { __html: '+' }
+  : { __html: '&times' };
+}	
+	
 class Sidebar extends React.Component {
 	
   render() {
@@ -15,14 +21,23 @@ class Sidebar extends React.Component {
 		  <span className='bottom'><h1>SLACK</h1></span>
 		</header>
 		
-		<div className='collapsed-list-btn' onClick={ this.props.toggle }>
-			{ this.props.btnLabel }
+		<div className='collapsed-list-header'>
+		  <h4>
+		    <Link to='/'>
+		    Resume
+			</Link>
+		  </h4>
+		</div>
+		
+		<div className='collapsed-list-btn' onClick={ this.props.toggle }
+		  dangerouslySetInnerHTML={ createMarkup( this.props.btnLabel ) }
+		>
 		</div>
 		
 		<div className='collapsed-list'>
 		  <h2>Projects</h2>
 		  <ul className='collapsed-list-ul'>
-		    <Link to='/'
+		    <Link to='/weatherApp'
 			  onClick={ this.props.toggle }>
 		      <li>Weather App</li>
 			</Link>
@@ -53,7 +68,11 @@ class Sidebar extends React.Component {
 		  <h3><Link to='/'>Resume</Link></h3>
 		  <h3>Projects:</h3>
 		  <ul className='projects'>
-		    <li>Weather App</li>
+		    <li>
+			<Link to='/weatherApp'>
+				Weather App
+				</Link>
+			</li>
 		    <li>
 			  <Link to='/chineseOdyssey'>
 			    Cheng and Tsui Chinese Odyssey

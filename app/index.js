@@ -8,16 +8,19 @@ let React = require( 'react' ),
 	Resume = require( './Components/Resume.js' ),
 	Bloodborne = require( './Components/Bloodborne.js' ),
 	ChineseOdyssey = require( './Components/ChineseOdyssey.js' ),
+	WeatherApp = require( './Components/WeatherApp.js' ),
 	MainContent = require( './Components/MainContent.js' );
 	
 require( './index.css' );
+
+
 
 class App extends React.Component {
 	constructor( props ) {
 		super( props );
 		
 		this.state = {
-			label: '+'
+			label: 'open'
 		};
 		
 		this.toggleCollapsed = this.toggleCollapsed.bind( this );
@@ -29,10 +32,10 @@ class App extends React.Component {
 			
 		if( sibling.classList.contains( 'active' ) ) {
 			sibling.classList.remove( 'active' );
-			this.setState(() => ({ label: '+' }));
+			this.setState(() => ({ label: 'open' }));
 		} else {
 			sibling.classList.add( 'active' );
-			this.setState(() => ({ label: 'x' }));
+			this.setState(() => ({ label: 'close' }));
 		}
 		
 	}
@@ -47,6 +50,7 @@ class App extends React.Component {
 			<Route exact path='/' component={ Resume } />
 			<Route path='/bloodborne' component={ Bloodborne } />
 			<Route path='/chineseOdyssey' component={ ChineseOdyssey } />
+			<Route path='/weatherApp' component={ WeatherApp } />
 			<Route render={() => <div>404 Not Found</div> } />
 			</Switch>
 			

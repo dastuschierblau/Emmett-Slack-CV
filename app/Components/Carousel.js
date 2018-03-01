@@ -13,10 +13,22 @@ class Carousel extends React.Component {
 	this.cacheElems = this.cacheElems.bind( this );
 	this.startSlider = this.startSlider.bind( this );
 	this.stopSlider = this.stopSlider.bind( this );
+	this.disableSlider = this.disableSlider.bind( this );
   }  
 	
   componentDidMount() {
     this.cacheElems();
+	
+	window.addEventListener( 'resize', () => {
+		const { slide, timer } = this.state;
+		clearInterval( timer );
+		this.setState(() => ({
+			width: this.state.$carouselItems[0].offsetWidth,
+			slide: 1
+		}), () => {
+			this.startSlider();
+		});
+	});
   }
   
   cacheElems() {
@@ -56,6 +68,7 @@ class Carousel extends React.Component {
 	  let timer;
 	  
 	  timer = setInterval(() => {
+	  if( slide === 1 ) $carouselUl.css( 'margin-left': 0 );
 	  
 	  $carouselUl.animate( { 'margin-left': '-='+width }, 1500, () => {
         slide++;
@@ -85,13 +98,27 @@ class Carousel extends React.Component {
 	  }));
   }
   
+  disableSlider() {
+	  const { $carouselUl } = this.state;
+	  $carouselUl.off( 'mouseenter', this.stopSlider );
+	  $carouselUl.off( 'mouseleave', this.startSlider );
+	  this.stopSlider();
+  }
+  
   componentWillUnmount() {
 	
-    const { $carouselUl } = this.state;
-	$carouselUl.off( 'mouseenter', this.stopSlider );
-	$carouselUl.off( 'mouseleave', this.startSlider );
-	this.stopSlider();
+	this.disableSlider();
 	
+	window.removeEventListener( 'resize', () => {
+		const { slide, timer } = this.state;
+		clearInterval( timer );
+		this.setState(() => ({
+			width: this.state.$carouselItems[0].offsetWidth,
+			slide: 1
+		}), () => {
+			this.startSlider();
+		});
+	});
   }
 
   render() {
