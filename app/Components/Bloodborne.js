@@ -24,9 +24,6 @@ class Bloodborne extends React.Component {
 		</p>
 		
 		<Carousel />
-		<span className='caption'>
-		  Mouse over the image to pause scrolling.
-		</span>
 		
 		<p>Item descriptions and stats 
 		   are rendered when a weapon is selected from the sidebar.

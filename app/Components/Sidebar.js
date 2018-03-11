@@ -37,30 +37,35 @@ class Sidebar extends React.Component {
 		<div className='collapsed-list'>
 		  <h2>Projects</h2>
 		  <ul className='collapsed-list-ul'>
+		  
 		    <Link to='/weatherApp'
 			  onClick={ this.props.toggle }>
-		      <li>Weather App</li>
+		      <li>
+			    Weather App
+			  </li>
 			</Link>
+			
 			<Link to='/chineseOdyssey'
 			  onClick={ this.props.toggle }>
-				<li>
-					Cheng and Tsui Chinese Odyssey
-				</li>
+			  <li>
+			    Cheng and Tsui Chinese Odyssey
+			  </li>
 			</Link>
-			<Link to='/'
-			  onClick={ this.props.toggle }>
-		      <li>Corvid App Landing Page</li>
-			</Link>
-			<Link to='/'
-			  onClick={ this.props.toggle }>
-		      <li>Netflix clone</li>
-			</Link>
+
 			 <Link to='/bloodborne'
 			   onClick={ this.props.toggle }>
 				<li>
 					Bloodborne Weapon Guide
 				</li>
 			</Link>
+			
+			<Link to='/redux'
+			  onClick={ this.props.toggle }>
+			  <li>
+			    Redux project- Coming Soon
+			  </li>
+			</Link>
+			
 		  </ul>
 		</div>
 		
@@ -68,23 +73,31 @@ class Sidebar extends React.Component {
 		  <h3><Link to='/'>Resume</Link></h3>
 		  <h3>Projects:</h3>
 		  <ul className='projects'>
+		  
 		    <li>
 			<Link to='/weatherApp'>
 				Weather App
 				</Link>
 			</li>
+			
 		    <li>
 			  <Link to='/chineseOdyssey'>
 			    Cheng and Tsui Chinese Odyssey
 			  </Link>
 			</li>
-		    <li>Corvid App Landing Page</li>
-		    <li>Netflix clone</li>
+
 			<li>
 			  <Link to='/bloodborne'>
 			    Bloodborne Weapon Guide
 			  </Link>
 			</li>
+			
+			<li>
+			  <Link to='/redux'>
+			    Redux project- Coming Soon
+			  </Link>
+			</li>
+			
 		  </ul>
 		</div>
 		

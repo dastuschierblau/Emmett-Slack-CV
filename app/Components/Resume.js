@@ -6,6 +6,10 @@ class Resume extends React.Component {
 	  <div className='mainContent'>
 	    <header className='resume-header'>
 		  <h2 className='resume-header-item'>EMMETT FRANK SLACK</h2>
+		  <span className='resume-header-item'>
+		    <img className='resume-header-photo' 
+			  src={ require( '../Images/profile.jpg' ) } />
+		  </span>
 		  <h3 className='resume-header-item'><a target='blank' href='https://github.com/dastuschierblau'>Github: dastuschierblau</a></h3>
 		  <h3 className='resume-header-item'>emmett.slack@yahoo.com</h3>
 		</header>
@@ -15,17 +19,23 @@ class Resume extends React.Component {
 			<h3>Coding Stuff:</h3>
 			<div className='underline'></div>
 			<ul className='ul-square'>
-			  <li>JavaScript programming (utilizing ES6 features)</li>
-			  <li>React.js and React Router for use in SPA's</li>
-			  <li>jQuery- primarily to augment javaScript features such
-			    as DOM manipulation, global custom events, and addition of
-				UI elements such as sliders</li>
+			  <li>JavaScript programming, utilizing ES6 features- arrow functions,
+			  destructuring, promises, and block scoped variables are among those that I use most often.
+			  </li>
+			  <li>React.js for use in SPA's. I chose to learn React because I found my
+			  favorite programming features tended to be declarative in nature, and React's component-based
+			  architecture is as declarative as it gets.</li>
+			  <li>React Router v4 for client side routing.</li>
+			  <li>Redux</li>
 			  <li>Web design with a focus on responsive design- familiarity
 			    with Bootstrap, media queries, and CSS grid to achieve this end</li>
 			  <li>HTML5 and CSS3</li>
-			  <li>Use of node.js npm, particularly for React projects</li>
+			  <li>Use of Node.js npm, particularly for React projects. Some of the packages
+			  regularly listed in my package.json manifest include axios, query-string, webpack-dev-server, 
+			  babel, and react-transition-group.</li>
 			  <li>Webpack to bundle everything together</li>
 			  <li>Version control using Git</li>
+			  <li>An understanding of basic server side routing with Node.js and Express</li>
 			</ul>
 			
 			<h3>Non Coding Stuff:</h3>
@@ -147,6 +157,9 @@ class Resume extends React.Component {
 			  <div style={{'paddingTop': '10px'}}>Contact information provided upon request.</div>
 			</ul>
 		  </section>
+		  
+		  <p>This resume template was built with React and React Router.
+		  </p>
 		
 	  </div>
 	);

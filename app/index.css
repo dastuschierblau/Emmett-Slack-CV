@@ -1,5 +1,7 @@
 /* Resume css file */
 
+/*------------------ CSS resets, standard settings --------------------*/
+
 body, div, ul, li, a, p, h1, h2, h3, h4, h5 {
 	margin: 0;
 	padding: 0;
@@ -108,9 +110,10 @@ a:hover {
 }
 
 .resume-header {
-	text-align: right;
 	color: #222222;
-
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .resume-header-item {
@@ -121,14 +124,21 @@ a:hover {
 	color: inherit;
 }
 
+.resume-header-photo {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	border: 5px solid #6e42f4;
+}
+
 .resume-section {
 	text-align: left;
-	margin: 30px 0;
+	margin: 10px 0;
 	border-radius: 8px;
 }
 
 .resume-section > * {
-	background-color: #fafafa;
+	
 }
 
 .resume-section > h2 {
@@ -137,7 +147,7 @@ a:hover {
 }
 
 .resume-section > h2, h3, ul {
-	padding: 25px;
+	padding: 10px 25px;
 }
 
 .resume-section > p {
@@ -155,7 +165,7 @@ a:hover {
 }
 
 .ul-square {
-
+  
 }
 
 .ul-square > li {
@@ -175,25 +185,72 @@ a:hover {
 .screenshot {
 	width: 60vw;
 	display: block;
-	margin: 0 auto;
+	margin: 20px auto;
+}
+
+.side-by-side {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.side-by-side > p {
+	padding: 25px;
+}
+
+.screenshot-small {
+	width: 60%;
 }
 
 /* ---------------- CAROUSEL STYLES --------------------------------*/
 
 #carousel {
 	width: 60vw;
-	overflow: hidden;
 	margin: 0 auto;
+	margin-bottom: 50px;
 	padding: 10px 0;
+	position: relative;
+	min-height: 30.5vw;
 }
 
 .carousel-ul {
-	width: 5000px;
-	padding: 0;
+
 }
 
 .carousel-li {
-	float: left;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	transition: 0.5s;
+	display: block;
+}
+
+.carousel-li.active {
+	opacity: 1;
+}
+
+.carousel-btn {
+	border: none;
+	background-color: yellow;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 10;
+}
+  .carousel-btn:hover {
+	  cursor: pointer;
+  }
+
+.prevBtn {
+	left: -10px;
+	top: 50%;
+}
+
+.nextBtn {
+	right: -10px;
+	top: 50%;
 }
 
 .caption {
@@ -222,8 +279,6 @@ a:hover {
 		text-align: center;
 		color: #dddddd;
 		height: 85vh;
-		display: flex;
-		flex-direction: column;
 		justify-content: space-around;
 		background: linear-gradient(to bottom, #222222, #444444);
 	}
@@ -335,11 +390,14 @@ a:hover {
 		background-color: #dddddd;
 		color: #222222;
 	}
-
 	
 	#carousel, .screenshot {
 		width: 90vw;
+		height: 45.5vw;
 	}
-
+	
+	.screenshot-small {
+		width: 90%;
+	}
 
 }

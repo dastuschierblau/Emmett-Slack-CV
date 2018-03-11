@@ -1,131 +1,117 @@
-const React = require( 'react' ),
-      $ = require( 'jquery' );
+const React = require( 'react' );
+	  
 	  
 class Carousel extends React.Component {
   constructor( props ) {
     super( props );
 	this.state = {
-		timer: null,
-		width: 0,
-		paused: false
+
 	};
-	
+
 	this.cacheElems = this.cacheElems.bind( this );
-	this.startSlider = this.startSlider.bind( this );
-	this.stopSlider = this.stopSlider.bind( this );
-	this.disableSlider = this.disableSlider.bind( this );
+	this.prevSlide = this.prevSlide.bind( this );
+	this.nextSlide = this.nextSlide.bind( this );
+
   }  
 	
   componentDidMount() {
-    this.cacheElems();
 	
-	window.addEventListener( 'resize', () => {
-		const { slide, timer } = this.state;
-		clearInterval( timer );
-		this.setState(() => ({
-			width: this.state.$carouselItems[0].offsetWidth,
-			slide: 1
-		}), () => {
-			this.startSlider();
-		});
-	});
+    this.cacheElems();
   }
   
   cacheElems() {
-	  const $carousel = $( '#carousel' ),
-	      $carouselUl = $( '.carousel-ul' ),
-		  $carouselItems = $( '.carousel-li' ),
-		  $carouselItem = $carouselUl.find( '.carousel-li' ),
-		  numItems = $carouselItems.length,
-		  width = $carouselItems[0].offsetWidth;
+	  const carousel = document.querySelector( '#carousel' ),
+	      carouselItems = document.querySelectorAll( '.carousel-li' ),
+		  numItems = carouselItems.length;
 		  
-	  let slide = 1;
-	  
+	  const prevBtn = document.querySelector( '.prevBtn' ),
+		  nextBtn = document.querySelector( '.nextBtn' );
+		  
+	  prevBtn.addEventListener( 'click', this.prevSlide );
+
+      nextBtn.addEventListener( 'click', this.nextSlide );
+		  
+	  let slide = 0;
 
 	  this.setState(() => ({
-		$carousel,
-		$carouselUl,
-		$carouselItems,
-		$carouselItem,
-		numItems,
+		carousel,
+		carouselItems,
 		slide,
-		width
-		}), () => {
-		  const { $carouselUl } = this.state;
-		  
-		  $carouselUl.on( 'mouseenter', this.stopSlider );
-		  $carouselUl.on( 'mouseleave', this.startSlider );
-		  
-		  this.startSlider();
-		});
+		numItems,
+		prevBtn,
+		nextBtn
+		}));
   }
+
   
-  startSlider() {
-	  const { $carouselUl, numItems, width } = this.state;
-	  let { paused } = this.state;
-	  
-	  let slide = paused? this.state.slide + 1 : 1;
-	  let timer;
-	  
-	  timer = setInterval(() => {
-	  if( slide === 1 ) $carouselUl.css( 'margin-left': 0 );
-	  
-	  $carouselUl.animate( { 'margin-left': '-='+width }, 1500, () => {
-        slide++;
-	  if( slide >= numItems ) {
-		  slide = 1;
-		  $carouselUl.css( 'margin-left', 0 );
+  prevSlide () {
+	  const { carouselItems, numItems } = this.state;
+	  let { slide } = this.state,
+	      i;
+		  
+      for( let i = 0; i < numItems; i++ ) {
+	    if( carouselItems[ i ].classList.contains( 'active' ) ) {
+		  carouselItems[ i ].classList.remove( 'active' );
+		  if( i === 0 ) {
+		    carouselItems[ numItems - 1 ].classList.add( 'active' );
+			slide = numItems - 1;
+			break;
+		  }
+		  else {
+		    carouselItems[ i - 1 ].classList.add( 'active' );
+			slide = slide - 1;
+			break;
+		  }
+		}
 	  }
-	  });
 	  
 	  this.setState(() => ({
-		  slide,
+		  slide
 	  }));
+
+  }
+  
+  nextSlide () {
+	  const { carouselItems, numItems } = this.state;
+	  let { slide } = this.state,
+	      i;
+		  
+      for( let i = 0; i < numItems; i++ ) {
+	    if( carouselItems[ i ].classList.contains( 'active' ) ) {
+		  carouselItems[ i ].classList.remove( 'active' );
+		  if( i === numItems - 1 ) {
+		    carouselItems[ 0 ].classList.add( 'active' );
+			slide = 0;
+			break;
+		  }
+		  else {
+		    carouselItems[ i + 1 ].classList.add( 'active' );
+			slide = slide + 1;
+			break;
+		  }
+		}
+	  }
 	  
-	}, 3000 );
-	
-	this.setState(() => ({
-		 timer,
-		 paused: false
-	  }));
-  }
-  
-  stopSlider() {
-	  const { timer } = this.state;
-	  clearInterval( timer );
 	  this.setState(() => ({
-		  paused: true
+		  slide
 	  }));
-  }
-  
-  disableSlider() {
-	  const { $carouselUl } = this.state;
-	  $carouselUl.off( 'mouseenter', this.stopSlider );
-	  $carouselUl.off( 'mouseleave', this.startSlider );
-	  this.stopSlider();
   }
   
   componentWillUnmount() {
-	
-	this.disableSlider();
-	
-	window.removeEventListener( 'resize', () => {
-		const { slide, timer } = this.state;
-		clearInterval( timer );
-		this.setState(() => ({
-			width: this.state.$carouselItems[0].offsetWidth,
-			slide: 1
-		}), () => {
-			this.startSlider();
-		});
-	});
+	const { prevBtn, nextBtn } = this.state;
+	  
+	prevBtn.removeEventListener( 'click', this.prevSlide );
+	nextBtn.removeEventListener( 'click', this.nextSlide );
   }
 
   render() {
     return (
 	  <div id='carousel'>
+	  
+	    <button className='prevBtn carousel-btn' dangerouslySetInnerHTML={{ __html: '&lt' }} />
+
 	    <ul className='carousel-ul'>
-		  <li className='carousel-li'>
+		  <li className='carousel-li active'>
 		    <img className='screenshot' 
 			  src={ require( '../Images/bloodborne2.png' ) } />
 		  </li>
@@ -141,11 +127,11 @@ class Carousel extends React.Component {
 		    <img className='screenshot' 
 			  src={ require( '../Images/bloodborne5.png' ) } />
 		  </li>
-		  <li className='carousel-li'>
-		    <img className='screenshot' 
-			  src={ require( '../Images/bloodborne2.png' ) } />
-		  </li>
+
 		</ul>
+		
+		<button className='nextBtn carousel-btn' dangerouslySetInnerHTML={{ __html: '&gt' }} />
+		
 	  </div>
 	);
   }
