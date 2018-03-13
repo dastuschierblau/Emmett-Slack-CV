@@ -145,15 +145,11 @@ class Resume extends React.Component {
 				Employer and practice owner of Stat Health in Cutchogue, NY.
 			  </li>
 			  <li>
-			    <strong>Christopher Finnigan, PA: </strong><br/>
+			    <strong>Christopher Finnegan, PA: </strong><br/>
 				<div className='underline'></div>
 				Colleague and provider for Stat Health P.C.
 			  </li>
-			  <li>
-			    <strong>Dr. John Hunt, MD: </strong><br/>
-				<div className='underline'></div>
-				Colleague and physician for Stat Health, P.C.
-			  </li>
+			  
 			  <div style={{'paddingTop': '10px'}}>Contact information provided upon request.</div>
 			</ul>
 		  </section>

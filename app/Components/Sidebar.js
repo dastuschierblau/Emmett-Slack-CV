@@ -44,13 +44,6 @@ class Sidebar extends React.Component {
 			    Weather App
 			  </li>
 			</Link>
-			
-			<Link to='/chineseOdyssey'
-			  onClick={ this.props.toggle }>
-			  <li>
-			    Cheng and Tsui Chinese Odyssey
-			  </li>
-			</Link>
 
 			 <Link to='/bloodborne'
 			   onClick={ this.props.toggle }>
@@ -80,11 +73,6 @@ class Sidebar extends React.Component {
 				</Link>
 			</li>
 			
-		    <li>
-			  <Link to='/chineseOdyssey'>
-			    Cheng and Tsui Chinese Odyssey
-			  </Link>
-			</li>
 
 			<li>
 			  <Link to='/bloodborne'>
@@ -107,3 +95,16 @@ class Sidebar extends React.Component {
 }
 
 module.exports = Sidebar;
+
+//<Link to='/chineseOdyssey'
+			//  onClick={ this.props.toggle }>
+			//  <li>
+			//    Cheng and Tsui Chinese Odyssey
+			//  </li>
+			//</Link>
+			
+			 //<li>
+			//  <Link to='/chineseOdyssey'>
+			//    Cheng and Tsui Chinese Odyssey
+			//  </Link>
+			//</li>

@@ -267,6 +267,69 @@ a:hover {
 	 box-shadow: 5px 5px 8px #666666;
 }
 
+/* --------------------- REDUX SAMPLE STYLES ---------------------------*/
+.tweet-wrapper {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.tweet-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 20%;
+	position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 15px;
+}
+
+.tweet-handle, .tweet-timestamp {
+	color: #666666;
+}
+
+.tweet {
+	padding-left: 30px;
+	width: 100%;
+}
+
+.tweet h3 {
+	padding: 0;
+}
+
+.tweet > header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	border-bottom: 1px solid #888888;
+}
+
+.tweet > p {
+	padding: 20px 0;
+}
+
+.tweet-stats {
+  display: flex;
+  padding: 10px 0;
+}
+
+.tweet-stats li {
+	padding: 10px 10px 0 0;
+}
+
+.tweet-stat {
+	display: flex;
+	flex-direction: column;
+}
+
+.tweet-stat > span {
+	color: purple;
+}
 
 /* ---------------- Media queries for 600px breakpoint -----------------*/
 
