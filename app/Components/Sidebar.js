@@ -52,6 +52,13 @@ class Sidebar extends React.Component {
 				</li>
 			</Link>
 			
+			<Link to='/corvid'
+			  onClick={ this.props.toggle }>
+			    <li>
+				  Corvid
+				</li>
+			</Link>
+			
 			<Link to='/redux'
 			  onClick={ this.props.toggle }>
 			  <li>
@@ -77,6 +84,12 @@ class Sidebar extends React.Component {
 			<li>
 			  <Link to='/bloodborne'>
 			    Bloodborne Weapon Guide
+			  </Link>
+			</li>
+			
+			<li>
+			  <Link to='/corvid'>
+			    Corvid
 			  </Link>
 			</li>
 			

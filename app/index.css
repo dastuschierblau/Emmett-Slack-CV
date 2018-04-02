@@ -105,23 +105,54 @@ a:hover {
 	font-weight: bold;
 }
 
-.mainContent h1 {
-	color: #222222;
+.mainContent h1, h2 {
+	color: #6e42f4;
 }
 
-.resume-header {
-	color: #222222;
+.resume-header-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 50px;
+}
+
+.resume-header-column {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
+.resume-header-column h3 {
+	padding: 0;
+}
+
+.resume-header-column > * {
+	height: 8vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-info {
+	padding-top: 50px;
+}
+  .email-icon {
+	  transform: scale( 0.5 );
+  }
+
 .resume-header-item {
-	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 15px;
 }
 
 .resume-header-item > a {
 	color: inherit;
+}
+
+.icon {
+	height: 10vh;
 }
 
 .resume-header-photo {
@@ -137,14 +168,6 @@ a:hover {
 	border-radius: 8px;
 }
 
-.resume-section > * {
-	
-}
-
-.resume-section > h2 {
-	color: #6e42f4;
-	
-}
 
 .resume-section > h2, h3, ul {
 	padding: 10px 25px;
@@ -340,10 +363,13 @@ a:hover {
 	
 	.resume-header {
 		text-align: center;
-		color: #dddddd;
 		height: 85vh;
 		justify-content: space-around;
-		background: linear-gradient(to bottom, #222222, #444444);
+	}
+	
+	.resume-header-column {
+		height: 60%;
+		justify-content: center;
 	}
 	
 	.resume-header a {

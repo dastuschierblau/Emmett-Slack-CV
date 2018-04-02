@@ -13,7 +13,7 @@ function Tweet ( props ) {
 			  <h3 className='tweet-handle'>{ `@${ handle }` }</h3>
 			  </header>
 			  
-			  <p>{ tweet }</p>
+			  <p style={{ fontSize: '1.3em' }}>{ tweet }</p>
 			  <h4 className='tweet-timestamp'>{ timestamp }</h4>
 			  <ul className='tweet-stats'>
 			    <li className='tweet-stat'>RETWEETS <span style={{ fontWeight: 'bold' }}>{ retweets }</span> </li>

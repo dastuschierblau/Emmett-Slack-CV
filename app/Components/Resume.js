@@ -4,19 +4,47 @@ class Resume extends React.Component {
   render() {
     return (
 	  <div className='mainContent'>
+	  
 	    <header className='resume-header'>
-		  <h2 className='resume-header-item'>EMMETT FRANK SLACK</h2>
-		  <span className='resume-header-item'>
-		    <img className='resume-header-photo' 
-			  src={ require( '../Images/profile.jpg' ) } />
-		  </span>
-		  <h3 className='resume-header-item'><a target='blank' href='https://github.com/dastuschierblau'>Github: dastuschierblau</a></h3>
-		  <h3 className='resume-header-item'>emmett.slack@yahoo.com</h3>
+			<div className='resume-header-row'>
+			  
+			  {/*
+			  <span className='resume-header-item'>
+				<img className='resume-header-photo' 
+				  src={ require( '../Images/profile.jpg' ) } />
+			  </span>
+			  */}
+			  
+			  <a className='resume-header-item' target='blank' href='https://github.com/dastuschierblau'>
+				<img className='icon' src={ require( '../Images/github.svg' ) } />
+			  </a>
+			  
+			  <a className='resume-header-item' target='blank' href='https://www.linkedin.com/in/emmett-slack-b3828438/'>
+				<img className='icon' src={ require( '../Images/linkedin.svg' ) } />
+			  </a>
+			 
+			</div>
+			
+			<div className='resume-header-column'>
+			  <h1>
+				Emmett Slack
+			  </h1>
+			  <h2>JavaScript and React developer</h2>
+			  
+			  <span className='contact-info'>
+				<img className='icon email-icon'
+				src={ require( '../Images/email.svg' ) } />
+				<h3>emmett.slack@yahoo.com</h3>
+			  </span>
+		    </div>
+			
 		</header>
+		
+		
 		  
 		  <section className='resume-section'>
 		    <h2>Skills and Qualifications:</h2>
-			<h3>Coding Stuff:</h3>
+			<h3>Coding:</h3>
 			<div className='underline'></div>
 			<ul className='ul-square'>
 			  <li>JavaScript programming, utilizing ES6 features- arrow functions,
@@ -38,7 +66,7 @@ class Resume extends React.Component {
 			  <li>An understanding of basic server side routing with Node.js and Express</li>
 			</ul>
 			
-			<h3>Non Coding Stuff:</h3>
+			<h3>Non Coding:</h3>
 			<div className='underline'></div>
 			  <ul className='ul-square'>
 			    <li>Proficiency in Mandarin Chinese and Spanish (written and
@@ -81,30 +109,43 @@ class Resume extends React.Component {
 		  <section className='resume-section'>
 		    <h2>Employment and Volunteer Work:</h2>
 			  <ul className='ul-square'>
+			  
 			    <li>
 				  <strong>January 2014 - present: </strong><br />
 				  <div className='underline'></div>
-				  Patient registration, insurance claims biller and medical record
-				  manager at Stat Health Urgent Care, P.C. in Cutchogue, NY.
+
+				  As an urgent care facility, Stat Health is a fast-paced environment requiring multitasking while maintaining strict adherence to protocol. This job integrated my past experience in clinical medicine with general office and minor management skills. I trained several other employees in this position.
+
+				  <br /><br />
+
+				Intake/discharge duties included verifying patient insurance, processing deductibles/copays and submitting insurance claims using medical software. I also handled office inventory and worked with the IT department to resolve any software and hardware issues that arose- usually involving printers.
+				
+				<br /><br />
+
+				Working at this job gave me insight into the structure and functionality of various types of software used in healthcare, as well as the pros and cons of each. Analyzing what kind of UI/UX was most intuitive and why is what initially sparked my interest in learning to develop applications myself.
 				</li>
+				
 				<li>
 				  <strong>May 2009 - present: </strong><br />
 				  <div className='underline'></div>
 				  Volunteer seasonal farm worker, wholesale delivery coordinator, and
 				  public market vendor for Catapano Dairy Farm of Peconic, NY.
 				</li>
+				
 				<li>
 				  <strong>December 2012 - April 2013: </strong><br />
 				  <div className='underline'></div>
 				  Customer service and perishables consultant at BJ's wholesale club #312
 				  in Riverhead, NY.
 				</li>
+				
 				<li>
 				  <strong>February 2012 - May 2012: </strong><br />
 				  <div className='underline'></div>
 				  Assistant coordinating deliveries for <u>The Campus Times</u> university
 				  newspaper for the University of Rochester.
 				</li>
+				
 				<li>
 				  <strong>January 2011 - December 2011: </strong><br />
 				  <div className='underline'></div>
@@ -113,6 +154,7 @@ class Resume extends React.Component {
 				  child subjects and assisting with assessments, both physical and cognitive. College
 				  credit attained under Independent Study qualifications.
 				</li>
+				
 				<li>
 				  <strong>June 2010 - August 2010: </strong><br />
 				  <div className='underline'></div>
@@ -120,6 +162,7 @@ class Resume extends React.Component {
 				  NY. Supervised by head physical therapist Cynthia Thieleman, duties included extensive
 				  patient contact and transport, as well as maintenance and upkeep of facilities.
 				</li>
+				
 				<li>
 				  <strong>June 2009 - August 2009: </strong><br />
 				  <div className='underline'></div>
@@ -127,6 +170,7 @@ class Resume extends React.Component {
 				  included opening and closing farmstand retail shop, cashier work, along with various
 				  upkeep and manual labor duties.
 				</li>
+				
 			  </ul>
 		  </section>
 		  
