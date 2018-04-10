@@ -21,10 +21,16 @@ class Sidebar extends React.Component {
 		  <span className='bottom'><h1>SLACK</h1></span>
 		</header>
 		
+		{/* Collapsed menu for smaller screens */}
 		<div className='collapsed-list-header'>
 		  <h4>
 		    <Link to='/'>
 		    Resume
+			</Link>
+		  </h4>
+		  <h4>
+		    <Link to='/mission'>
+			Mission
 			</Link>
 		  </h4>
 		</div>
@@ -69,8 +75,10 @@ class Sidebar extends React.Component {
 		  </ul>
 		</div>
 		
+		{/* Regular sidebar menu for med/large screens */}
 		<div className='project-list'>
 		  <h3><Link to='/'>Resume</Link></h3>
+		  <h3><Link to='/mission'>Mission</Link></h3>
 		  <h3>Projects:</h3>
 		  <ul className='projects'>
 		  

@@ -60,13 +60,15 @@ a:hover {
 
 .sidebar h3 { 
 	padding: 30px 10px 5px 0;
-	border-bottom: 1px solid #fafafa;
 	width: 80%;
 	margin: 0 auto;
 }
+  .sidebar .underlined {
+	  border-bottom: 1px solid #fafafa;
+  }
 
 .projects li {
-	padding: 10px 10px 10px 20px;
+	padding: 10px 10px 10px 40px;
 }
 
 .projects li > a {
@@ -81,6 +83,10 @@ a:hover {
 
 .collapsed-list, .collapsed-list-btn, .collapsed-list-header {
 	display: none;
+}
+
+.collapsed-list-header h4 {
+	padding-right: 30px;
 }
 
 
@@ -109,17 +115,25 @@ a:hover {
 	color: #6e42f4;
 }
 
+.resume-header {
+	display: flex;
+	justify-content: space-between;
+}
+
 .resume-header-row {
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	padding-bottom: 50px;
+}
+
+.icon-row {
+	height: 30vh;
 }
 
 .resume-header-column {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .resume-header-column h3 {
@@ -133,12 +147,6 @@ a:hover {
 	justify-content: center;
 }
 
-.contact-info {
-	padding-top: 50px;
-}
-  .email-icon {
-	  transform: scale( 0.5 );
-  }
 
 .resume-header-item {
 	display: flex;
@@ -165,16 +173,15 @@ a:hover {
 .resume-section {
 	text-align: left;
 	margin: 10px 0;
-	border-radius: 8px;
 }
 
 
 .resume-section > h2, h3, ul {
-	padding: 10px 25px;
+	padding: 10px 0;
 }
 
 .resume-section > p {
-	padding: 25px;
+	padding: 10px;
 }
 
 .resume-section > h3 {
@@ -188,7 +195,7 @@ a:hover {
 }
 
 .ul-square {
-  
+  padding-left: 20px;
 }
 
 .ul-square > li {
@@ -362,14 +369,30 @@ a:hover {
 	}
 	
 	.resume-header {
+		flex-direction: column;
 		text-align: center;
 		height: 85vh;
-		justify-content: space-around;
+		font-size: 0.8em;
+	}
+	
+	.resume-header-row {
+		flex: 1;
+		justify-content: center;
+		padding: 0;
+	}
+	
+	.icon-row {
+		max-width: 100vw;
+	}
+	
+	.icon-row > img {
+		width: 30vw;
 	}
 	
 	.resume-header-column {
-		height: 60%;
-		justify-content: center;
+		flex: 3;
+		justify-content: space-around;
+		align-items: center;
 	}
 	
 	.resume-header a {
@@ -380,9 +403,7 @@ a:hover {
 		color: yellow;
 	}
 	
-	.resume-header > h3 {
-		font-size: 0.9em;
-	}
+	
 	
 	.project-list {
 		display: none;

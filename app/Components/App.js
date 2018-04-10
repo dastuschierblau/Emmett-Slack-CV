@@ -10,6 +10,7 @@ let React = require( 'react' ),
 	Corvid = require( './Corvid.js' ),
 	WeatherApp = require( './WeatherApp.js' ),
 	Redux = require( './Redux.js' ),
+	Mission = require( './Mission.js' ),
 	MainContent = require( './MainContent.js' );
 
 
@@ -51,6 +52,7 @@ class App extends React.Component {
 			<Route path='/corvid' component={ Corvid } />
 			<Route path='/weatherApp' component={ WeatherApp } />
 			<Route path='/redux' component ={ Redux } />
+			<Route path ='/mission' component ={ Mission } />
 			<Route render={() => <div>404 Not Found</div> } />
 			</Switch>
 			

@@ -5,7 +5,25 @@ class Resume extends React.Component {
     return (
 	  <div className='mainContent'>
 	  
+	  <div className='resume-header-row icon-row'>
+		  <img src={ require( '../Images/js.svg' ) } />
+		  <img src={ require( '../Images/react.svg' ) } />
+		  <img src={ require( '../Images/redux.svg' ) } />
+		</div>
+	  
 	    <header className='resume-header'>
+		
+		    <div className='resume-header-column'>
+			  <h1>
+				Emmett Slack
+			  </h1>
+			  <h2>JavaScript and React developer</h2>
+			  
+			  <span className='contact-info'>
+				<h3>emmett.slack90@gmail.com</h3>
+			  </span>
+		    </div>
+		
 			<div className='resume-header-row'>
 			  
 			  {/*
@@ -25,18 +43,6 @@ class Resume extends React.Component {
 			 
 			</div>
 			
-			<div className='resume-header-column'>
-			  <h1>
-				Emmett Slack
-			  </h1>
-			  <h2>JavaScript and React developer</h2>
-			  
-			  <span className='contact-info'>
-				<img className='icon email-icon'
-				src={ require( '../Images/email.svg' ) } />
-				<h3>emmett.slack@yahoo.com</h3>
-			  </span>
-		    </div>
 			
 		</header>
 		
