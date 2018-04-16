@@ -37,6 +37,11 @@ class Bloodborne extends React.Component {
 		   allow for nested routes, i.e. a specialization route followed
 		   by an individual weapon route. 
 		</p>
+		<p>The user can visually compare stats between two weapons in chart form
+		by selecting
+		a weapon to compare with from a dropdown list.
+		I used chart.js to render the stat comparison charts in a pop-up modal.
+		</p>
 		<p>The entire UI is itself wrapped in a Route component- with no specified path,
            just a render property- to allow for
 		   usage of the location prop supplied by React Router. This prop was

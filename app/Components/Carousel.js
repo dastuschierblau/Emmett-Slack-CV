@@ -20,26 +20,20 @@ class Carousel extends React.Component {
   }
   
   cacheElems() {
-	  const carousel = document.querySelector( '#carousel' ),
-	      carouselItems = document.querySelectorAll( '.carousel-li' ),
+	  const 
+	      carouselItems = this.carousel.querySelectorAll( '.carousel-li' ),
 		  numItems = carouselItems.length;
 		  
-	  const prevBtn = document.querySelector( '.prevBtn' ),
-		  nextBtn = document.querySelector( '.nextBtn' );
-		  
-	  prevBtn.addEventListener( 'click', this.prevSlide );
+	  this.prevBtn.addEventListener( 'click', this.prevSlide );
 
-      nextBtn.addEventListener( 'click', this.nextSlide );
+      this.nextBtn.addEventListener( 'click', this.nextSlide );
 		  
 	  let slide = 0;
 
 	  this.setState(() => ({
-		carousel,
 		carouselItems,
 		slide,
-		numItems,
-		prevBtn,
-		nextBtn
+		numItems
 		}));
   }
 
@@ -98,19 +92,21 @@ class Carousel extends React.Component {
   }
   
   componentWillUnmount() {
-	const { prevBtn, nextBtn } = this.state;
 	  
-	prevBtn.removeEventListener( 'click', this.prevSlide );
-	nextBtn.removeEventListener( 'click', this.nextSlide );
+	this.prevBtn.removeEventListener( 'click', this.prevSlide );
+	this.nextBtn.removeEventListener( 'click', this.nextSlide );
   }
 
   render() {
     return (
 	  <div id='carousel'>
 	  
-	    <button className='prevBtn carousel-btn' dangerouslySetInnerHTML={{ __html: '&lt' }} />
+	    <button className='prevBtn carousel-btn' 
+		  ref={( prev ) => this.prevBtn = prev } 
+		  dangerouslySetInnerHTML={{ __html: '&lt' }} />
 
-	    <ul className='carousel-ul'>
+	    <ul className='carousel-ul' ref={( carouselUl ) => {
+		this.carousel = carouselUl }}>
 		  <li className='carousel-li active'>
 		    <img className='screenshot' 
 			  src={ require( '../Images/bloodborne2.png' ) } />
@@ -127,10 +123,16 @@ class Carousel extends React.Component {
 		    <img className='screenshot' 
 			  src={ require( '../Images/bloodborne5.png' ) } />
 		  </li>
+		  <li className='carousel-li'>
+		    <img className='screenshot' 
+			  src={ require( '../Images/bloodborne6.png' ) } />
+		  </li>
 
 		</ul>
 		
-		<button className='nextBtn carousel-btn' dangerouslySetInnerHTML={{ __html: '&gt' }} />
+		<button className='nextBtn carousel-btn' 
+		  ref={( next ) => this.nextBtn = next }
+		  dangerouslySetInnerHTML={{ __html: '&gt' }} />
 		
 	  </div>
 	);
