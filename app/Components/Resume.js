@@ -69,7 +69,13 @@ class Resume extends React.Component {
         </section>
 
         <section className="resume-section project-list-section">
-          <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+          <h2
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "20px"
+            }}
+          >
             Projects:
           </h2>
           <ul className="projects-list">

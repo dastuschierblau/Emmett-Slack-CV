@@ -54,19 +54,24 @@ a:hover {
   height: 30vh;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: space-between;
+  background-color: #267ef2;
+  color: #fafafa;
 }
 
 .header-logo > .top {
-  background-color: #fafafa;
-  color: #543de5;
-  padding-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 0 0 10px;
 }
 
 .header-logo > .bottom {
-  background: linear-gradient(to right, #6e42f4, #267ef2);
-  color: #fafafa;
-  padding-bottom: 40px;
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 10px 10px 0;
 }
 
 .sidebar h3 {
@@ -148,13 +153,13 @@ a:hover {
   width: 250px;
   height: 80px;
   margin: 0 20px 20px 0;
-  background-color: #6e42f4;
+  background-color: #222222;
   color: #fafafa;
   border-radius: 5px;
 }
 .projects-list li:hover {
   cursor: pointer;
-  background-color: #222222;
+  background-color: #6e42f4;
 }
 .projects-list a {
   color: inherit;

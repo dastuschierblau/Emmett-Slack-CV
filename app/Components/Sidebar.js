@@ -15,10 +15,12 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <header className="header-logo">
           <span className="top">
-            <h1>Emmett Slack</h1>
+            <h1>
+              EMMETT <br />SLACK
+            </h1>
           </span>
           <span className="bottom">
-            <h3>emmett.slack90@gmail.com</h3>
+            <h4>emmett.slack90@gmail.com</h4>
           </span>
         </header>
 
