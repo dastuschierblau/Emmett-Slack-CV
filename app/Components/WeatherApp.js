@@ -1,4 +1,5 @@
 const React = require("react");
+const Screenshot = require("./Screenshot");
 
 class WeatherApp extends React.Component {
   render() {
@@ -22,15 +23,9 @@ class WeatherApp extends React.Component {
           Firebase project
         </a>
 
-        <img
-          className="screenshot"
-          src={require("../Images/weatherApp1.png")}
-        />
+        <Screenshot url="weatherApp1.png" />
 
-        <img
-          className="screenshot"
-          src={require("../Images/weatherApp2.png")}
-        />
+        <Screenshot url="weatherApp2.png" />
 
         <p>
           Upon entry of a city into either of the input fields and a click of
@@ -55,7 +50,7 @@ class WeatherApp extends React.Component {
           changes to reflect selection of a new city.
         </p>
 
-        <img className="screenshot" src={require("../Images/weatherApp.png")} />
+        <Screenshot url="weatherApp.png" />
 
         <p>
           Another feature I included in this app is a change in the displayed
@@ -65,10 +60,7 @@ class WeatherApp extends React.Component {
           themselves using the button on the bottom right of the screen.
         </p>
 
-        <img
-          className="screenshot"
-          src={require("../Images/weatherApp3.png")}
-        />
+        <Screenshot url="weatherApp3.png" />
 
         <p>
           When a city's forecast is being rendered to the screen, the user has
