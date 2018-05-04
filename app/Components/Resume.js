@@ -79,20 +79,31 @@ class Resume extends React.Component {
             Projects:
           </h2>
           <ul className="projects-list">
-            <li>
-              <Link to="/weatherApp">Weather App</Link>
+            <li className="projects-list-project" id="weatherApp-project">
+              <Link className="project-link" to="/weatherApp">
+                Weather App
+              </Link>
+              <div className="project-info" />
+            </li>
+
+            <li className="projects-list-project" id="bloodborne-project">
+              <Link className="project-link" to="/bloodborne">
+                Bloodborne Weapon Guide
+              </Link>
+              <div className="project-info" />
+            </li>
+
+            <li className="projects-list-project" id="corvid-project">
+              <Link className="project-link" to="/corvid">
+                Corvid
+              </Link>
+              <div className="project-info" />
             </li>
 
             <li>
-              <Link to="/bloodborne">Bloodborne Weapon Guide</Link>
-            </li>
-
-            <li>
-              <Link to="/corvid">Corvid</Link>
-            </li>
-
-            <li>
-              <Link to="/redux">Redux project- Coming Soon</Link>
+              <Link style={{ color: "#222222" }} to="/redux">
+                Redux project- Coming Soon
+              </Link>
             </li>
           </ul>
         </section>
