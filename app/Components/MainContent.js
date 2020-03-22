@@ -34,7 +34,7 @@ class MainContent extends React.Component {
         {/* End technology icons */}
 
         <div className='mainContent-inner'>
-          <h2 className='text-center text-blue p-1'>My Projects:</h2>
+          <h2 className='text-blue my-1'>My Projects:</h2>
 
           <div>
             <h3>Slack Tracker</h3>
@@ -48,6 +48,24 @@ class MainContent extends React.Component {
               A full stack MERN application that allows management of projects
               via creation of tickets for individual tasks.
             </p>
+            <h3>Tools:</h3>
+            <ul>
+              <li className='pb-1'>
+                <i className='fas fa-check text-blue'></i> React
+              </li>
+              <li className='pb-1'>
+                <i className='fas fa-check text-blue'></i> Redux
+              </li>
+              <li className='pb-1'>
+                <i className='fas fa-check text-blue'></i> React Router v4
+              </li>
+              <li className='pb-1'>
+                <i className='fas fa-check text-blue'></i> Express
+              </li>
+              <li className='pb-1'>
+                <i className='fas fa-check text-blue'></i> MongoDB
+              </li>
+            </ul>
             <Screenshot url={'Slack-Tracker-landing.PNG'} />
           </div>
 

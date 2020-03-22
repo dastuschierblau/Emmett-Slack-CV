@@ -90,12 +90,20 @@ a {
   margin: 3rem, 0;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+
 .mb-4 {
   margin-bottom: 4rem;
 }
 
 .margin-auto {
   margin: 0 auto;
+}
+
+.my-1 {
+  margin: 1rem 0;
 }
 
 .p-3 {
@@ -128,22 +136,27 @@ a {
   color: #6e42f4;
 }
 
+.big-text {
+  font-size: 4rem;
+  font-weight: lighter;
+}
+
 /*---------------------SIDEBAR STYLES------------------*/
 
 .sidebar {
-  background-color: #ddd;
+  background: linear-gradient(rgba(101, 88, 212, 0.2), rgba(101, 88, 212, 0.2));
 }
 
 .header-logo {
-  height: 30vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   background: linear-gradient(
       rgba(38, 126, 242, 0.75),
       rgba(38, 126, 242, 0.75)
     ),
-    url('./Images/austin.jpg') no-repeat center center/cover;
+    url('./Images/austin.jpg') no-repeat 20% 20% / cover;
   color: #fafafa;
 }
 
@@ -152,6 +165,8 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 10px 0 0 20px;
+  font-weight: 100;
+  font-size: 30px;
 }
 
 .header-logo > .bottom {
@@ -182,11 +197,7 @@ a {
 /*---------------------RESUME SECTION STYLES--------------*/
 
 .mainContent {
-  background: linear-gradient(
-      rgba(220, 220, 220, 0.6),
-      rgba(220, 220, 220, 0.6)
-    ),
-    url('./Images/y-so-serious-white.png') round center center;
+  background-color: rgba(101, 88, 212, 0.2);
 }
 
 .mainContent-inner {

@@ -17,15 +17,7 @@ class Sidebar extends React.Component {
     return (
       <div className='sidebar'>
         <header className='header-logo'>
-          <span className='top'>
-            <h1>
-              EMMETT <br />
-              SLACK
-            </h1>
-          </span>
-          <span className='bottom'>
-            <h4>emmett.slack90@gmail.com</h4>
-          </span>
+          <h1 className='text-center big-text'>EMMETT SLACK</h1>
         </header>
 
         <div>
@@ -47,7 +39,9 @@ class Sidebar extends React.Component {
         </div>
 
         <div className='d-flex flex-column text-center p-3'>
-          <h1 className='text-primary'>JS developer in Austin, TX</h1>
+          <h1 className='text-primary'>
+            {'{ '} JS developer {' }'} = Austin, TX
+          </h1>
           <p className='lead'>
             I build full stack web applications with a focus on the nifty
             technologies available in the JS ecosystem.
@@ -69,6 +63,11 @@ class Sidebar extends React.Component {
               <FontAwesomeIcon className='p-1 text-purple' icon={faHeart} />
             </li>
           </ul>
+
+          <div className='d-flex align-items-center justify-content-center mt-1'>
+            <i className='fas fa-envelope text-purple p-1'></i>{' '}
+            emmett.slack90@gmail.com
+          </div>
         </div>
       </div>
     );
