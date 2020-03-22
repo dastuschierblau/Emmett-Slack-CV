@@ -1,24 +1,19 @@
-let React = require("react"),
-  ReactDOM = require("react-dom"),
-  ReactRouter = require("react-router-dom"),
+let React = require('react'),
+  Fragment = React.Fragment,
+  ReactRouter = require('react-router-dom'),
   Router = ReactRouter.BrowserRouter,
   Route = ReactRouter.Route,
   Switch = ReactRouter.Switch,
-  Sidebar = require("./Sidebar.js"),
-  Resume = require("./Resume.js"),
-  Bloodborne = require("./Bloodborne.js"),
-  Corvid = require("./Corvid.js"),
-  WeatherApp = require("./WeatherApp.js"),
-  Redux = require("./Redux.js"),
-  Mission = require("./Mission.js"),
-  MainContent = require("./MainContent.js");
+  Sidebar = require('./Sidebar.js'),
+  Footer = require('./Footer.js'),
+  MainContent = require('./MainContent.js');
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      label: "open"
+      label: 'open'
     };
 
     this.toggleCollapsed = this.toggleCollapsed.bind(this);
@@ -28,78 +23,42 @@ class App extends React.Component {
     let el = e.target,
       sibling = el.nextElementSibling;
 
-    if (sibling.classList.contains("active")) {
-      sibling.classList.remove("active");
-      this.setState(() => ({ label: "open" }));
+    if (sibling.classList.contains('active')) {
+      sibling.classList.remove('active');
+      this.setState(() => ({ label: 'open' }));
     } else {
-      sibling.classList.add("active");
-      this.setState(() => ({ label: "close" }));
+      sibling.classList.add('active');
+      this.setState(() => ({ label: 'close' }));
     }
   }
 
   render() {
     return (
       <Router>
-        <div className="container">
+        <div className='container'>
           <Switch>
-            <Route exact path="/" component={Resume} />
             <Route
-              path="/bloodborne"
+              exact
+              path='/'
               render={() => {
                 return (
-                  <span>
-                    <Sidebar
-                      toggle={this.toggleCollapsed}
-                      btnLabel={this.state.label}
-                    />
-                    <Bloodborne />
-                  </span>
+                  <Fragment>
+                    <Sidebar />
+                    <MainContent />
+                    <Footer />
+                  </Fragment>
                 );
               }}
             />
             <Route
-              path="/corvid"
               render={() => {
                 return (
-                  <span>
-                    <Sidebar
-                      toggle={this.toggleCollapsed}
-                      btnLabel={this.state.label}
-                    />
-                    <Corvid />
-                  </span>
+                  <h1 className='p-3'>
+                    Not sure how you got here, but this isn't a page!
+                  </h1>
                 );
               }}
             />
-            <Route
-              path="/weatherApp"
-              render={() => {
-                return (
-                  <span>
-                    <Sidebar
-                      toggle={this.toggleCollapsed}
-                      btnLabel={this.state.label}
-                    />
-                    <WeatherApp />
-                  </span>
-                );
-              }}
-            />
-            <Route
-              path="/redux"
-              render={() => {
-                return (
-                  <span>
-                    <Sidebar
-                      toggle={this.toggleCollapsed}
-                      btnLabel={this.state.label}
-                    />
-                    <Redux />
-                  </span>
-                );
-              }}
-            />
-            <Route render={() => <div>404 Not Found</div>} />
           </Switch>
         </div>
       </Router>

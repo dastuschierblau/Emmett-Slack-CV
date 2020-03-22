@@ -2,3 +2,5 @@ node_modules
 dist
 firebase.json
 .firebaserc
+firebase-debug.log
+.firebase/

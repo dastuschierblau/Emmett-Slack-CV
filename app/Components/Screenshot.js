@@ -1,4 +1,4 @@
-const React = require("react");
+const React = require('react');
 
 class Screenshot extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Screenshot extends React.Component {
 
     return (
       <img
-        className="screenshot"
+        className='screenshot'
         src={require(`../Images/${imgUrl}`)}
         onClick={this.showModal}
       />
