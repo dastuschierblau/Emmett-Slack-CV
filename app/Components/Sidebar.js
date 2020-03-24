@@ -38,36 +38,40 @@ class Sidebar extends React.Component {
           </ul>
         </div>
 
-        <div className='d-flex flex-column text-center p-3'>
+        {/* Technology icons */}
+        <ul className='tech-icons mt-1 py-1'>
+          <li className='d-flex justify-content-center align-items-center'>
+            <img className='icon' src={require('../Images/js.svg')} />
+          </li>
+
+          <li>
+            <img className='icon' src={require('../Images/react.svg')} />
+          </li>
+
+          <li>
+            <img className='icon' src={require('../Images/redux.svg')} />
+          </li>
+
+          <li>
+            <img className='icon' src={require('../Images/node.svg')} />
+          </li>
+        </ul>
+        {/* End technology icons */}
+
+        <div className='d-flex flex-column  sidebar-text py-3'>
           <h1 className='text-primary'>
             {'{ '} JS developer {' }'} = Austin, TX
           </h1>
           <p className='lead'>
             I build full stack web applications with a focus on the nifty
-            technologies available in the JS ecosystem.
+            technologies available in the JavaScript ecosystem.
           </p>
-          <ul>
-            <li className='d-flex align-items-center justify-content-center'>
-              <FontAwesomeIcon className='p-1 text-purple' icon={faHeart} />
-              <span>Declarative Code</span>
-              <FontAwesomeIcon className='p-1 text-purple' icon={faHeart} />
-            </li>
-            <li className='d-flex align-items-center justify-content-center'>
-              <FontAwesomeIcon className='p-1 text-purple' icon={faHeart} />
-              <span>Babel</span>
-              <FontAwesomeIcon className='p-1 text-purple' icon={faHeart} />
-            </li>
-            <li className='d-flex align-items-center justify-content-center'>
-              <FontAwesomeIcon className='p-1 text-purple' icon={faHeart} />
-              <span>Webpack</span>
-              <FontAwesomeIcon className='p-1 text-purple' icon={faHeart} />
-            </li>
-          </ul>
-
-          <div className='d-flex align-items-center justify-content-center mt-1'>
-            <i className='fas fa-envelope text-purple p-1'></i>{' '}
-            emmett.slack90@gmail.com
-          </div>
+          <p className='lead'>
+            I love leveraging the best of JavaScript in a functional way (reduce
+            method FTW!) which is why I often reach for React and friends when
+            building my own applications.
+          </p>
+          <h1 className='text-blue py-1 '>Check out some of my projects.</h1>
         </div>
       </div>
     );
