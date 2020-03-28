@@ -364,45 +364,21 @@ footer {
   box-shadow: 5px 5px 8px #666666;
 }
 
-/* ---------- Transformations ----------------*/
-
-@-webkit-keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideInDown {
-  -webkit-animation-name: slideInDown;
-  animation-name: slideInDown;
-}
-
 /* ---------------- Media queries for 600px breakpoint -----------------*/
 
 @media screen and (max-width: 800px) {
   .container {
     display: flex;
     flex-direction: column;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-text {
+    width: 90vw;
   }
 
   .project-link {
@@ -422,11 +398,8 @@ footer {
     width: 30vw;
   }
 
-  .resume-header a {
-    transition: 0.5s;
-  }
-
-  .resume-header a:hover {
-    color: yellow;
+  footer {
+    display: flex;
+    flex-direction: column;
   }
 }

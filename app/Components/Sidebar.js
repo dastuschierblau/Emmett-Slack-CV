@@ -17,7 +17,10 @@ class Sidebar extends React.Component {
     return (
       <div className='sidebar'>
         <header className='header-logo'>
-          <h1 className='text-center big-text'>EMMETT SLACK</h1>
+          <h1 className='text-center big-text logo-text'>
+            <span>EMMETT </span>
+            <span>SLACK</span>
+          </h1>
         </header>
 
         <div>

@@ -6,7 +6,7 @@ function Footer() {
       <div className='copyright text-center my-auto'>
         <span>Copyright &copy; Emmett Slack 2020</span>
       </div>
-      <div>
+      <div className='footer-email'>
         emmett.slack90@gmail.com
         <i className='fas fa-envelope text-purple p-1'></i>{' '}
       </div>

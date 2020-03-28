@@ -30,7 +30,7 @@ class Screenshot extends React.Component {
 
     return (
       <Fragment>
-        <div className='relative'>
+        <div className='relative bg-translucent'>
           <div
             className={hovering ? 'overlay d-flex align-items-center' : 'hide'}
           >
