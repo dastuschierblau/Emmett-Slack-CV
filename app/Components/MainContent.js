@@ -17,7 +17,7 @@ class MainContent extends React.Component {
         'Redux',
         'React Router v4',
         'Express',
-        'MongoDB'
+        'MongoDB',
       ],
       sudokuTools = ['React'];
 
@@ -26,7 +26,7 @@ class MainContent extends React.Component {
         <div className='mainContent-inner'>
           <div className='project'>
             <Hover>
-              {hovering => {
+              {(hovering) => {
                 return (
                   <Screenshot
                     hovering={hovering}
@@ -35,6 +35,7 @@ class MainContent extends React.Component {
                     url={'Slack-Tracker-landing.PNG'}
                     title='Slack Tracker'
                     desc='A full stack MERN application that allows management of projects via creation of tickets for individual tasks.'
+                    note={`(The project below is a full stack application hosted on heroku's free tier, and as such usually takes about 15-20 seconds to spin up if the dyno has idled.)`}
                   />
                 );
               }}
@@ -43,7 +44,7 @@ class MainContent extends React.Component {
 
           <div className='project'>
             <Hover>
-              {hovering => {
+              {(hovering) => {
                 return (
                   <Screenshot
                     hovering={hovering}

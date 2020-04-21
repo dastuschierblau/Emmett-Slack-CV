@@ -41,26 +41,6 @@ class Sidebar extends React.Component {
           </ul>
         </div>
 
-        {/* Technology icons */}
-        <ul className='tech-icons mt-1 py-1'>
-          <li className='d-flex justify-content-center align-items-center'>
-            <img className='icon' src={require('../Images/js.svg')} />
-          </li>
-
-          <li>
-            <img className='icon' src={require('../Images/react.svg')} />
-          </li>
-
-          <li>
-            <img className='icon' src={require('../Images/redux.svg')} />
-          </li>
-
-          <li>
-            <img className='icon' src={require('../Images/node.svg')} />
-          </li>
-        </ul>
-        {/* End technology icons */}
-
         <div className='d-flex flex-column  sidebar-text py-3'>
           <h1 className='text-primary'>
             {'{ '} JS developer {' }'} = Austin, TX
@@ -74,6 +54,29 @@ class Sidebar extends React.Component {
             method FTW!) which is why I often reach for React and friends when
             building my own applications.
           </p>
+
+          {/* Technology icons */}
+          <ul className='tech-icons mt-1 py-1'>
+            <li className='d-flex justify-content-center align-items-center'>
+              <img className='icon' src={require('../Images/js.svg')} />
+            </li>
+
+            <li>
+              <img className='icon' src={require('../Images/react.svg')} />
+            </li>
+
+            <li>
+              <img className='icon' src={require('../Images/redux.svg')} />
+            </li>
+
+            <li>
+              <img className='icon' src={require('../Images/node.svg')} />
+            </li>
+          </ul>
+          {/* End technology icons */}
+
+          <div className='line'></div>
+
           <h1 className='text-blue py-1 '>Check out some of my projects.</h1>
         </div>
       </div>
