@@ -19,7 +19,8 @@ class MainContent extends React.Component {
         'Express',
         'MongoDB',
       ],
-      sudokuTools = ['React'];
+      sudokuTools = ['React'],
+      grackleTools = ['React', 'React Hooks'];
 
     return (
       <div className='mainContent'>
@@ -36,6 +37,24 @@ class MainContent extends React.Component {
                     title='Slack Tracker'
                     desc='A full stack MERN application that allows management of projects via creation of tickets for individual tasks.'
                     note={`(The project below is a full stack application hosted on heroku's free tier, and as such usually takes about 15-20 seconds to spin up if the dyno has idled.)`}
+                  />
+                );
+              }}
+            </Hover>
+          </div>
+
+          <div className='project'>
+            <Hover>
+              {(hovering) => {
+                return (
+                  <Screenshot
+                    hovering={hovering}
+                    tools={grackleTools}
+                    link='https://grackle-properties.firebaseapp.com/'
+                    url={'Grackle1.PNG'}
+                    title='Grackle Properties'
+                    note='More features coming!'
+                    desc='An apartment website where users can view available apartments.'
                   />
                 );
               }}

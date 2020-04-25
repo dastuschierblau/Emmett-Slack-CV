@@ -3,6 +3,8 @@ let React = require('react'),
   NavLink = ReactRouter.NavLink,
   Link = ReactRouter.Link;
 
+let Hover = require('./Hover');
+
 const { FontAwesomeIcon } = require('@fortawesome/react-fontawesome');
 const { faHeart } = require('@fortawesome/free-solid-svg-icons');
 
@@ -15,7 +17,7 @@ class Sidebar extends React.Component {
     const collapseBtn = document.querySelector('.collapsed-list-btn');
 
     return (
-      <div className='sidebar'>
+      <div className='sidebar relative'>
         <header className='header-logo'>
           <h1 className='text-center big-text logo-text'>
             <span>EMMETT </span>
@@ -41,43 +43,73 @@ class Sidebar extends React.Component {
           </ul>
         </div>
 
-        <div className='d-flex flex-column  sidebar-text py-3'>
-          <h1 className='text-primary'>
-            {'{ '} JS developer {' }'} = Austin, TX
-          </h1>
-          <p className='lead'>
-            I build full stack web applications with a focus on the nifty
-            technologies available in the JavaScript ecosystem.
-          </p>
-          <p className='lead'>
-            I love leveraging the best of JavaScript in a functional way (reduce
-            method FTW!) which is why I often reach for React and friends when
-            building my own applications.
-          </p>
-
+        <div className='relative'>
           {/* Technology icons */}
           <ul className='tech-icons mt-1 py-1'>
-            <li className='d-flex justify-content-center align-items-center'>
-              <img className='icon' src={require('../Images/js.svg')} />
-            </li>
+            <Hover>
+              {(hovering) => {
+                return (
+                  <li className={`hover-${hovering}`}>
+                    <img className='icon' src={require('../Images/js.svg')} />
+                  </li>
+                );
+              }}
+            </Hover>
 
-            <li>
-              <img className='icon' src={require('../Images/react.svg')} />
-            </li>
+            <Hover>
+              {(hovering) => {
+                return (
+                  <li className={`hover-${hovering}`}>
+                    <img
+                      className='icon'
+                      src={require('../Images/react.svg')}
+                    />
+                  </li>
+                );
+              }}
+            </Hover>
 
-            <li>
-              <img className='icon' src={require('../Images/redux.svg')} />
-            </li>
+            <Hover>
+              {(hovering) => {
+                return (
+                  <li className={`hover-${hovering}`}>
+                    <img
+                      className='icon'
+                      src={require('../Images/redux.svg')}
+                    />
+                  </li>
+                );
+              }}
+            </Hover>
 
-            <li>
-              <img className='icon' src={require('../Images/node.svg')} />
-            </li>
+            <Hover>
+              {(hovering) => {
+                return (
+                  <li className={`hover-${hovering}`}>
+                    <img className='icon' src={require('../Images/node.svg')} />
+                  </li>
+                );
+              }}
+            </Hover>
           </ul>
           {/* End technology icons */}
 
-          <div className='line'></div>
+          <div className='d-flex flex-column  sidebar-text py-3'>
+            <h1 className='text-primary'>
+              {'{ '} JS developer {' }'} = Austin, TX
+            </h1>
+            <p className='lead'>
+              I build full stack web applications with a focus on the nifty
+              technologies available in the JavaScript ecosystem.
+            </p>
+            <p className='lead'>
+              I love leveraging the best of JavaScript in a functional way
+              (reduce method FTW!) which is why I often reach for React and
+              friends when building my own applications.
+            </p>
 
-          <h1 className='text-blue py-1 '>Check out some of my projects.</h1>
+            <h1 className='text-blue py-1 '>Check out some of my projects.</h1>
+          </div>
         </div>
       </div>
     );
