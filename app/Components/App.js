@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      label: 'open'
+      label: 'open',
     };
 
     this.toggleCollapsed = this.toggleCollapsed.bind(this);

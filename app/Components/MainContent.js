@@ -67,11 +67,30 @@ class MainContent extends React.Component {
                 return (
                   <Screenshot
                     hovering={hovering}
-                    tools={sudokuTools}
+                    tools={[sudokuTools]}
                     link='https://solve-doku-d86e1.firebaseapp.com/'
                     url={'sudoku1.PNG'}
                     title='Solve Doku'
                     desc='A mini project using React that allows the user to check their entries to ensure they do not violate the current board based on the rules of sudoku.'
+                  />
+                );
+              }}
+            </Hover>
+          </div>
+
+          <div className='project'>
+            <Hover>
+              {(hovering) => {
+                return (
+                  <Screenshot
+                    hovering={hovering}
+                    match={this.props.match}
+                    internalLink={true}
+                    tools={['React', 'React Hooks']}
+                    link='https://ancient-sierra-91444.herokuapp.com/'
+                    url={'Slack-Tracker-landing.PNG'}
+                    title='HeatMap'
+                    desc='A React component that generates a heatmap from an array of data.'
                   />
                 );
               }}
